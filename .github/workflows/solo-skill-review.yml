@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 2
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '22'
       - name: CI/CD Validation
         run: node scripts/ci-validate.js
 
@@ -27,40 +27,70 @@ jobs:
     needs: validate
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 2
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies (Course 1)
         working-directory: courses/01-react-fundamentals/project
-        run: npm ci
+        run: |
+          for i in 1 2 3; do
+            npm ci --no-audit --no-fund && break
+            echo "npm ci attempt $i failed, retrying in 10s..."
+            sleep 10
+          done
 
       - name: Install dependencies (Course 2)
         working-directory: courses/02-redux-rtk-query/project
-        run: npm ci
+        run: |
+          for i in 1 2 3; do
+            npm ci --no-audit --no-fund && break
+            echo "npm ci attempt $i failed, retrying in 10s..."
+            sleep 10
+          done
 
       - name: Install dependencies (Course 3)
         working-directory: courses/03-nextjs-app-router/project
-        run: npm ci
+        run: |
+          for i in 1 2 3; do
+            npm ci --no-audit --no-fund && break
+            echo "npm ci attempt $i failed, retrying in 10s..."
+            sleep 10
+          done
 
       - name: Install review engine dependencies (Course 1)
         working-directory: courses/01-react-fundamentals/review-engine
-        run: npm ci
+        run: |
+          for i in 1 2 3; do
+            npm ci --no-audit --no-fund && break
+            echo "npm ci attempt $i failed, retrying in 10s..."
+            sleep 10
+          done
 
       - name: Install review engine dependencies (Course 2)
         working-directory: courses/02-redux-rtk-query/review-engine
-        run: npm ci
+        run: |
+          for i in 1 2 3; do
+            npm ci --no-audit --no-fund && break
+            echo "npm ci attempt $i failed, retrying in 10s..."
+            sleep 10
+          done
 
       - name: Install review engine dependencies (Course 3)
         working-directory: courses/03-nextjs-app-router/review-engine
-        run: npm ci
+        run: |
+          for i in 1 2 3; do
+            npm ci --no-audit --no-fund && break
+            echo "npm ci attempt $i failed, retrying in 10s..."
+            sleep 10
+          done
 
       - name: Install Playwright browsers (Course 1)
         working-directory: courses/01-react-fundamentals/project
