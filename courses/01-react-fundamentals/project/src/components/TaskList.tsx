@@ -24,10 +24,11 @@ const DEFAULT_TASKS: Task[] = [
   { id: 3, title: 'Task Three', description: 'Third task', priority: 'Low', completed: false },
 ]
 
-export default function TaskList({ tasks }: TaskListProps) {
+export default function TaskList({ tasks, countText }: TaskListProps) {
   const items = tasks ?? DEFAULT_TASKS
   return (
     <section id="task-list">
+      {countText != null && <p id="task-count">{countText}</p>}
       {items.map((task) => (
         <TaskCard
           key={task.id}
