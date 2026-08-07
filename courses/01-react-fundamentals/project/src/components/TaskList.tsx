@@ -1,3 +1,4 @@
+import TaskCard from './TaskCard'
 export interface Task {
   id: string | number
   title: string
@@ -17,6 +18,25 @@ interface TaskListProps {
   linkToTaskDetail?: boolean
 }
 
-export default function TaskList(_props: TaskListProps) {
-  return <section id="task-list" />
+const DEFAULT_TASKS: Task[] = [
+  { id: 1, title: 'Task One', description: 'First task', priority: 'High', completed: false },
+  { id: 2, title: 'Task Two', description: 'Second task', priority: 'Medium', completed: false },
+  { id: 3, title: 'Task Three', description: 'Third task', priority: 'Low', completed: false },
+]
+
+export default function TaskList({ tasks }: TaskListProps) {
+  const items = tasks ?? DEFAULT_TASKS
+  return (
+    <section id="task-list">
+      {items.map((task) => (
+        <TaskCard
+          key={task.id}
+          title={task.title}
+          description={task.description}
+          priority={task.priority}
+        />
+      ))}
+    </section>
+  )
 }
+
