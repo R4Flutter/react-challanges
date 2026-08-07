@@ -1,4 +1,4 @@
-name: SOLO Challenges: Review
+name: "SOLO Challenges: Review"
 
 on:
   push:
