@@ -1,23 +1,23 @@
 {
-  "lastUpdated": "2026-08-07T07:37:12.762Z",
+  "lastUpdated": "2026-08-08T08:13:05.395Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 32.1,
-    "completionPercentage": 5.7,
+    "overallScore": 32.2,
+    "completionPercentage": 13.2,
     "badgeLevel": "none",
     "totalChallenges": 53,
-    "completedChallenges": 3
+    "completedChallenges": 7
   },
   "courses": {
     "01-react-fundamentals": {
       "courseId": "01-react-fundamentals",
       "courseName": "React Fundamentals",
-      "averageScore": 97.2,
-      "completionPercentage": 13,
+      "averageScore": 97.7,
+      "completionPercentage": 30.4,
       "badgeLevel": "none",
       "totalChallenges": 23,
-      "completedChallenges": 3,
+      "completedChallenges": 7,
       "challenges": {
         "01-static-task-display": {
           "challengeId": "01-static-task-display",
@@ -62,6 +62,66 @@
             "bestPractices": 100,
             "e2eTests": 100,
             "aiReview": 88
+          }
+        },
+        "04-task-completion-toggle": {
+          "challengeId": "04-task-completion-toggle",
+          "challengeName": "Task Completion Toggle",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": "2026-08-08T08:09:26.053Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 88
+          }
+        },
+        "05-task-deletion": {
+          "challengeId": "05-task-deletion",
+          "challengeName": "Task Deletion",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": "2026-08-08T08:11:17.672Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 88
+          }
+        },
+        "06-task-filtering": {
+          "challengeId": "06-task-filtering",
+          "challengeName": "Task Filtering",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": "2026-08-08T08:12:00.467Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 88
+          }
+        },
+        "07-priority-based-sorting": {
+          "challengeId": "07-priority-based-sorting",
+          "challengeName": "Priority-Based Sorting",
+          "passed": true,
+          "score": 97.45,
+          "lastRun": "2026-08-08T08:12:31.124Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 83
           }
         }
       }

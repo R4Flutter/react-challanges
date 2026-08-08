@@ -1447,5 +1447,1553 @@
       "maintainability": 90,
       "overall": "The code is well-structured, maintainable, and efficient. However, there are some areas that can be improved to make it even better. With some minor adjustments, this code can be a great example of best practices in React and TypeScript development."
     }
+  },
+  {
+    "challengeId": "04-task-completion-toggle",
+    "challengeName": "Task Completion Toggle",
+    "timestamp": "2026-08-08T08:09:26.053Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 100,
+      "aiReview": 88
+    },
+    "totalScore": 98.2,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 6,
+      "passedTests": 6,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 04: Task Completion Toggle"
+              ],
+              "fullName": " Challenge 04: Task Completion Toggle TaskCard should render checkbox when onToggle provided",
+              "status": "passed",
+              "title": "TaskCard should render checkbox when onToggle provided",
+              "duration": 184,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 04: Task Completion Toggle"
+              ],
+              "fullName": " Challenge 04: Task Completion Toggle TaskCard should call onToggle when checkbox clicked",
+              "status": "passed",
+              "title": "TaskCard should call onToggle when checkbox clicked",
+              "duration": 141,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 04: Task Completion Toggle"
+              ],
+              "fullName": " Challenge 04: Task Completion Toggle TaskCard should show strike-through when completed",
+              "status": "passed",
+              "title": "TaskCard should show strike-through when completed",
+              "duration": 86,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 04: Task Completion Toggle"
+              ],
+              "fullName": " Challenge 04: Task Completion Toggle TaskCard should have data-completed or different style when completed",
+              "status": "passed",
+              "title": "TaskCard should have data-completed or different style when completed",
+              "duration": 8,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 04: Task Completion Toggle"
+              ],
+              "fullName": " Challenge 04: Task Completion Toggle TaskList should pass onToggle to TaskCard when tasks provided",
+              "status": "passed",
+              "title": "TaskList should pass onToggle to TaskCard when tasks provided",
+              "duration": 127,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 04: Task Completion Toggle"
+              ],
+              "fullName": " Challenge 04: Task Completion Toggle count text should show X of Y completed format",
+              "status": "passed",
+              "title": "count text should show X of Y completed format",
+              "duration": 6,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1786176598021,
+          "endTime": 1786176598573,
+          "status": "passed",
+          "message": "",
+          "name": "C:/Users/rajna/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-04.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\App.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\components\\TaskCard.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\components\\TaskList.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "props",
+        "useState",
+        "arrayMethods"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/components/TaskCard.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": [
+            "useState",
+            "arrayMethods"
+          ]
+        },
+        {
+          "file": "src/components/TaskList.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props",
+            "arrayMethods"
+          ],
+          "patternsMissing": [
+            "useState"
+          ]
+        },
+        {
+          "file": "src/App.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useState",
+            "arrayMethods"
+          ],
+          "patternsMissing": [
+            "props"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 4,
+      "passedTests": 4,
+      "failedTests": 0,
+      "details": [
+        {
+          "title": "challenge-04.spec.ts",
+          "file": "challenge-04.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 04: Task Completion Toggle - E2E",
+              "file": "challenge-04.spec.ts",
+              "line": 3,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should display task count as X of Y completed",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 6538,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-08T08:10:54.019Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "0401c8ab289c6ab836d0-a2b3d91f109649ae1056",
+                  "file": "challenge-04.spec.ts",
+                  "line": 8,
+                  "column": 3
+                },
+                {
+                  "title": "should have checkboxes on tasks",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 618,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-08T08:11:01.445Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "0401c8ab289c6ab836d0-ea4e86645a8846a56a20",
+                  "file": "challenge-04.spec.ts",
+                  "line": 14,
+                  "column": 3
+                },
+                {
+                  "title": "should toggle completion when checkbox clicked",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 581,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-08T08:11:02.114Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "0401c8ab289c6ab836d0-274beee5472a14342c50",
+                  "file": "challenge-04.spec.ts",
+                  "line": 19,
+                  "column": 3
+                },
+                {
+                  "title": "should show completed count in count text",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 556,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-08T08:11:02.745Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "0401c8ab289c6ab836d0-aec84959f510a7ad44a7",
+                  "file": "challenge-04.spec.ts",
+                  "line": 26,
+                  "column": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "screenshots": []
+    },
+    "aiReviewResults": {
+      "challengeId": "04-task-completion-toggle",
+      "timestamp": "2026-08-08T08:11:04.164Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of interfaces and types is excellent, making it easier to understand the code's intent and behavior.",
+        "The code is well-organized, with each component having a clear and focused responsibility."
+      ],
+      "improvements": [
+        "Some of the component props could be more descriptive, making it easier for other developers to understand their purpose.",
+        "There are some repeated code patterns, such as the use of `window.confirm` for deleting tasks. This could be extracted into a separate utility function.",
+        "The `TaskList` component could benefit from a more robust way of handling the `countText` prop, such as using a more robust formatting function."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured, maintainable, and follows best practices. However, there are some areas for improvement, such as making prop descriptions more clear and extracting repeated code patterns into separate utility functions."
+    },
+    "aiResults": {
+      "challengeId": "04-task-completion-toggle",
+      "timestamp": "2026-08-08T08:11:04.164Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of interfaces and types is excellent, making it easier to understand the code's intent and behavior.",
+        "The code is well-organized, with each component having a clear and focused responsibility."
+      ],
+      "improvements": [
+        "Some of the component props could be more descriptive, making it easier for other developers to understand their purpose.",
+        "There are some repeated code patterns, such as the use of `window.confirm` for deleting tasks. This could be extracted into a separate utility function.",
+        "The `TaskList` component could benefit from a more robust way of handling the `countText` prop, such as using a more robust formatting function."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured, maintainable, and follows best practices. However, there are some areas for improvement, such as making prop descriptions more clear and extracting repeated code patterns into separate utility functions."
+    }
+  },
+  {
+    "challengeId": "05-task-deletion",
+    "challengeName": "Task Deletion",
+    "timestamp": "2026-08-08T08:11:17.672Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 100,
+      "aiReview": 88
+    },
+    "totalScore": 98.2,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 6,
+      "passedTests": 6,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 05: Task Deletion"
+              ],
+              "fullName": " Challenge 05: Task Deletion TaskCard should render Delete button when onDelete and id provided",
+              "status": "passed",
+              "title": "TaskCard should render Delete button when onDelete and id provided",
+              "duration": 372,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 05: Task Deletion"
+              ],
+              "fullName": " Challenge 05: Task Deletion TaskCard should not render Delete button when onDelete not provided",
+              "status": "passed",
+              "title": "TaskCard should not render Delete button when onDelete not provided",
+              "duration": 10,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 05: Task Deletion"
+              ],
+              "fullName": " Challenge 05: Task Deletion TaskCard should call onDelete when Delete clicked and user confirms",
+              "status": "passed",
+              "title": "TaskCard should call onDelete when Delete clicked and user confirms",
+              "duration": 183,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 05: Task Deletion"
+              ],
+              "fullName": " Challenge 05: Task Deletion TaskCard should not call onDelete when user cancels confirmation",
+              "status": "passed",
+              "title": "TaskCard should not call onDelete when user cancels confirmation",
+              "duration": 134,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 05: Task Deletion"
+              ],
+              "fullName": " Challenge 05: Task Deletion TaskList should pass onDelete to TaskCard when provided",
+              "status": "passed",
+              "title": "TaskList should pass onDelete to TaskCard when provided",
+              "duration": 140,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 05: Task Deletion"
+              ],
+              "fullName": " Challenge 05: Task Deletion TaskList should show countText in #task-count",
+              "status": "passed",
+              "title": "TaskList should show countText in #task-count",
+              "duration": 9,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1786176687742,
+          "endTime": 1786176688592,
+          "status": "passed",
+          "message": "",
+          "name": "C:/Users/rajna/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-05.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\App.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\components\\TaskApp.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\components\\TaskCard.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\components\\TaskList.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "props"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/components/TaskCard.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/components/TaskList.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/components/TaskApp.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/App.tsx",
+          "patternsFound": [
+            "functionalComponent"
+          ],
+          "patternsMissing": [
+            "props"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 3,
+      "passedTests": 3,
+      "failedTests": 0,
+      "details": [
+        {
+          "title": "challenge-05.spec.ts",
+          "file": "challenge-05.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 05: Task Deletion - E2E",
+              "file": "challenge-05.spec.ts",
+              "line": 3,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should display task list",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 611,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-08T08:11:46.397Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "ec25b63e8ac6a5e53e87-ec0c2b7d330d2d117cff",
+                  "file": "challenge-05.spec.ts",
+                  "line": 8,
+                  "column": 3
+                },
+                {
+                  "title": "should display task count",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 354,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-08T08:11:47.321Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "ec25b63e8ac6a5e53e87-5b57ad5e79a105edfb8e",
+                  "file": "challenge-05.spec.ts",
+                  "line": 12,
+                  "column": 3
+                },
+                {
+                  "title": "should have Delete buttons when onDelete is passed from App",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 371,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-08T08:11:47.732Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "ec25b63e8ac6a5e53e87-a2ff53882f4a8f940c7a",
+                  "file": "challenge-05.spec.ts",
+                  "line": 16,
+                  "column": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "screenshots": []
+    },
+    "aiReviewResults": {
+      "challengeId": "05-task-deletion",
+      "timestamp": "2026-08-08T08:11:48.822Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components makes the code more maintainable and efficient.",
+        "The separation of concerns between components is well-maintained."
+      ],
+      "improvements": [
+        "Some of the functions, such as `handleDelete` and `handleToggle`, are quite long and could be broken down into smaller, more manageable functions.",
+        "The `TaskCard` component could benefit from a more robust validation of its props, to ensure that they are always present and in the correct format.",
+        "The `TaskApp` component has a lot of props, which can make it harder to understand and maintain. Consider using a prop validation library to ensure that all props are present and in the correct format."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured, maintainable, and efficient. However, there are some areas where it could be improved, such as breaking down long functions and improving prop validation. With some minor adjustments, this code could be even more robust and scalable."
+    },
+    "aiResults": {
+      "challengeId": "05-task-deletion",
+      "timestamp": "2026-08-08T08:11:48.822Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components makes the code more maintainable and efficient.",
+        "The separation of concerns between components is well-maintained."
+      ],
+      "improvements": [
+        "Some of the functions, such as `handleDelete` and `handleToggle`, are quite long and could be broken down into smaller, more manageable functions.",
+        "The `TaskCard` component could benefit from a more robust validation of its props, to ensure that they are always present and in the correct format.",
+        "The `TaskApp` component has a lot of props, which can make it harder to understand and maintain. Consider using a prop validation library to ensure that all props are present and in the correct format."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured, maintainable, and efficient. However, there are some areas where it could be improved, such as breaking down long functions and improving prop validation. With some minor adjustments, this code could be even more robust and scalable."
+    }
+  },
+  {
+    "challengeId": "06-task-filtering",
+    "challengeName": "Task Filtering",
+    "timestamp": "2026-08-08T08:12:00.467Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 100,
+      "aiReview": 88
+    },
+    "totalScore": 98.2,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 5,
+      "passedTests": 5,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 06: Task Filtering"
+              ],
+              "fullName": " Challenge 06: Task Filtering FilterBar should render All, Active, Completed buttons",
+              "status": "passed",
+              "title": "FilterBar should render All, Active, Completed buttons",
+              "duration": 347,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 06: Task Filtering"
+              ],
+              "fullName": " Challenge 06: Task Filtering FilterBar should have id=\"filter-bar\"",
+              "status": "passed",
+              "title": "FilterBar should have id=\"filter-bar\"",
+              "duration": 17,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 06: Task Filtering"
+              ],
+              "fullName": " Challenge 06: Task Filtering FilterBar should highlight active filter",
+              "status": "passed",
+              "title": "FilterBar should highlight active filter",
+              "duration": 147,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 06: Task Filtering"
+              ],
+              "fullName": " Challenge 06: Task Filtering FilterBar should call onFilterChange when button clicked",
+              "status": "passed",
+              "title": "FilterBar should call onFilterChange when button clicked",
+              "duration": 186,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 06: Task Filtering"
+              ],
+              "fullName": " Challenge 06: Task Filtering TaskList with filtered tasks should show only matching tasks",
+              "status": "passed",
+              "title": "TaskList with filtered tasks should show only matching tasks",
+              "duration": 24,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1786176725485,
+          "endTime": 1786176726208,
+          "status": "passed",
+          "message": "",
+          "name": "C:/Users/rajna/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-06.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\App.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\components\\FilterBar.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\components\\TaskApp.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "props"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/components/FilterBar.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/components/TaskApp.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/App.tsx",
+          "patternsFound": [
+            "functionalComponent"
+          ],
+          "patternsMissing": [
+            "props"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 4,
+      "passedTests": 4,
+      "failedTests": 0,
+      "details": [
+        {
+          "title": "challenge-06.spec.ts",
+          "file": "challenge-06.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 06: Task Filtering - E2E",
+              "file": "challenge-06.spec.ts",
+              "line": 3,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should display filter bar",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 478,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-08T08:12:17.653Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "fdfd0a4bbce1fa4a4eed-fa0bd3544f252931e9b9",
+                  "file": "challenge-06.spec.ts",
+                  "line": 8,
+                  "column": 3
+                },
+                {
+                  "title": "should have All, Active, Completed buttons",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 338,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-08T08:12:18.302Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "fdfd0a4bbce1fa4a4eed-8ce17f999a3e644ff671",
+                  "file": "challenge-06.spec.ts",
+                  "line": 12,
+                  "column": 3
+                },
+                {
+                  "title": "should display task list",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 350,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-08T08:12:18.662Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "fdfd0a4bbce1fa4a4eed-eb36d08bcbcaee9c272f",
+                  "file": "challenge-06.spec.ts",
+                  "line": 18,
+                  "column": 3
+                },
+                {
+                  "title": "clicking Active should filter to incomplete tasks",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 456,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-08T08:12:19.041Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "fdfd0a4bbce1fa4a4eed-3855523a802bf9881bb2",
+                  "file": "challenge-06.spec.ts",
+                  "line": 22,
+                  "column": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "screenshots": []
+    },
+    "aiReviewResults": {
+      "challengeId": "06-task-filtering",
+      "timestamp": "2026-08-08T08:12:20.178Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components makes the code more maintainable and scalable.",
+        "The code is well-commented, making it easier for others to understand the functionality."
+      ],
+      "improvements": [
+        "Some of the functions, such as `handleToggle` and `handleAddTask`, are quite long and complex. Consider breaking them down into smaller, more manageable functions.",
+        "The `TaskApp` component is handling a lot of logic, including filtering, sorting, and displaying tasks. Consider breaking this down into smaller, more focused components.",
+        "The `FilterBar` component is not using a more modern approach to handling state changes, such as using the `useState` hook with an initial value. Consider updating this to make the code more modern and efficient."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, but could benefit from some refactoring to make it more scalable and efficient. With some improvements, this code has the potential to be a high-quality, maintainable solution."
+    },
+    "aiResults": {
+      "challengeId": "06-task-filtering",
+      "timestamp": "2026-08-08T08:12:20.178Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components makes the code more maintainable and scalable.",
+        "The code is well-commented, making it easier for others to understand the functionality."
+      ],
+      "improvements": [
+        "Some of the functions, such as `handleToggle` and `handleAddTask`, are quite long and complex. Consider breaking them down into smaller, more manageable functions.",
+        "The `TaskApp` component is handling a lot of logic, including filtering, sorting, and displaying tasks. Consider breaking this down into smaller, more focused components.",
+        "The `FilterBar` component is not using a more modern approach to handling state changes, such as using the `useState` hook with an initial value. Consider updating this to make the code more modern and efficient."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, but could benefit from some refactoring to make it more scalable and efficient. With some improvements, this code has the potential to be a high-quality, maintainable solution."
+    }
+  },
+  {
+    "challengeId": "07-priority-based-sorting",
+    "challengeName": "Priority-Based Sorting",
+    "timestamp": "2026-08-08T08:12:31.124Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 100,
+      "aiReview": 83
+    },
+    "totalScore": 97.45,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 3,
+      "passedTests": 3,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 07: Priority-Based Sorting"
+              ],
+              "fullName": " Challenge 07: Priority-Based Sorting FilterBar or sort control should exist",
+              "status": "passed",
+              "title": "FilterBar or sort control should exist",
+              "duration": 49,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 07: Priority-Based Sorting"
+              ],
+              "fullName": " Challenge 07: Priority-Based Sorting TaskList should render tasks in order provided",
+              "status": "passed",
+              "title": "TaskList should render tasks in order provided",
+              "duration": 304,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 07: Priority-Based Sorting"
+              ],
+              "fullName": " Challenge 07: Priority-Based Sorting When tasks sorted High to Low, High appears first",
+              "status": "passed",
+              "title": "When tasks sorted High to Low, High appears first",
+              "duration": 126,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1786176759050,
+          "endTime": 1786176759529,
+          "status": "passed",
+          "message": "",
+          "name": "C:/Users/rajna/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-07.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\App.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\components\\FilterBar.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\components\\TaskApp.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "props"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/components/FilterBar.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/components/TaskApp.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/App.tsx",
+          "patternsFound": [
+            "functionalComponent"
+          ],
+          "patternsMissing": [
+            "props"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 2,
+      "passedTests": 2,
+      "failedTests": 0,
+      "details": [
+        {
+          "title": "challenge-07.spec.ts",
+          "file": "challenge-07.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 07: Priority-Based Sorting - E2E",
+              "file": "challenge-07.spec.ts",
+              "line": 3,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should display task list",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 758,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-08T08:12:55.943Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "7e3ab03348c1d17f8ec0-ffedea28fb870c94d6b8",
+                  "file": "challenge-07.spec.ts",
+                  "line": 8,
+                  "column": 3
+                },
+                {
+                  "title": "should display tasks",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 441,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-08T08:12:57.134Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "7e3ab03348c1d17f8ec0-7057cd7f4822bf925c3c",
+                  "file": "challenge-07.spec.ts",
+                  "line": 12,
+                  "column": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "screenshots": []
+    },
+    "aiReviewResults": {
+      "challengeId": "07-priority-based-sorting",
+      "timestamp": "2026-08-08T08:12:58.278Z",
+      "score": 83,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear separation of concerns between components.",
+        "The use of TypeScript and functional components promotes type safety and reusability.",
+        "The code is well-documented, with clear and concise comments explaining the purpose of each component and function."
+      ],
+      "improvements": [
+        "The `PRIORITY_ORDER` object could be replaced with an enum to improve code readability and maintainability.",
+        "The `handleToggle` and `handleAddTask` functions could be simplified by using arrow functions and reducing the number of conditional statements.",
+        "The `displayedTasks` variable could be renamed to something more descriptive, such as `filteredTasks` or `sortedTasks`."
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code is well-structured and maintainable, with a clear separation of concerns between components. However, there are some areas for improvement, such as simplifying the `handleToggle` and `handleAddTask` functions and renaming the `displayedTasks` variable. With some minor adjustments, this code could be even more readable and maintainable."
+    },
+    "aiResults": {
+      "challengeId": "07-priority-based-sorting",
+      "timestamp": "2026-08-08T08:12:58.278Z",
+      "score": 83,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear separation of concerns between components.",
+        "The use of TypeScript and functional components promotes type safety and reusability.",
+        "The code is well-documented, with clear and concise comments explaining the purpose of each component and function."
+      ],
+      "improvements": [
+        "The `PRIORITY_ORDER` object could be replaced with an enum to improve code readability and maintainability.",
+        "The `handleToggle` and `handleAddTask` functions could be simplified by using arrow functions and reducing the number of conditional statements.",
+        "The `displayedTasks` variable could be renamed to something more descriptive, such as `filteredTasks` or `sortedTasks`."
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code is well-structured and maintainable, with a clear separation of concerns between components. However, there are some areas for improvement, such as simplifying the `handleToggle` and `handleAddTask` functions and renaming the `displayedTasks` variable. With some minor adjustments, this code could be even more readable and maintainable."
+    }
   }
 ]

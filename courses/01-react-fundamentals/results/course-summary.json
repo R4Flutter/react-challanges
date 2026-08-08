@@ -1,11 +1,11 @@
 {
   "courseId": "01-react-fundamentals",
   "courseName": "React Fundamentals",
-  "lastUpdated": "2026-08-07T07:37:11.325Z",
+  "lastUpdated": "2026-08-08T08:13:05.284Z",
   "totalChallenges": 23,
-  "completedChallenges": 3,
-  "averageScore": 97.2,
-  "completionPercentage": 13,
+  "completedChallenges": 7,
+  "averageScore": 97.7,
+  "completionPercentage": 30.4,
   "badgeLevel": "none",
   "challengeResults": [
     {
@@ -25,12 +25,40 @@
       "challengeName": "Adding New Tasks",
       "score": 98.2,
       "passed": true
+    },
+    {
+      "challengeId": "04-task-completion-toggle",
+      "challengeName": "Task Completion Toggle",
+      "score": 98.2,
+      "passed": true
+    },
+    {
+      "challengeId": "05-task-deletion",
+      "challengeName": "Task Deletion",
+      "score": 98.2,
+      "passed": true
+    },
+    {
+      "challengeId": "06-task-filtering",
+      "challengeName": "Task Filtering",
+      "score": 98.2,
+      "passed": true
+    },
+    {
+      "challengeId": "07-priority-based-sorting",
+      "challengeName": "Priority-Based Sorting",
+      "score": 97.45,
+      "passed": true
     }
   ],
   "skillStrengths": [
     "Static Task Display",
     "Dynamic Task Rendering",
-    "Adding New Tasks"
+    "Adding New Tasks",
+    "Task Completion Toggle",
+    "Task Deletion",
+    "Task Filtering",
+    "Priority-Based Sorting"
   ],
   "improvementAreas": []
 }
