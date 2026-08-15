@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Dispatch, SetStateAction } from 'react'
 import type { Task } from './TaskList'
 import TaskList from './TaskList'
@@ -35,6 +35,19 @@ export default function TaskApp({
   const [sortOrder, setSortOrder] = useState<SortValue>('Recently Added')
   const [editingId, setEditingId] = useState<string | number | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
+  const [debouncedQuery, setDebouncedQuery] = useState('')
+
+  useEffect(() => {
+    if (searchQuery === debouncedQuery) {
+      return
+    }
+    const timer = setTimeout(() => {
+      setDebouncedQuery(searchQuery)
+    }, 300)
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [searchQuery, debouncedQuery])
 
   const handleToggle = (id: string | number) => {
     if (setTasks) {
@@ -69,8 +82,8 @@ export default function TaskApp({
     }
   }
 
-  if (showFilterBar && showSearch && searchQuery.trim() !== '') {
-    const query = searchQuery.trim().toLowerCase()
+  if (showFilterBar && showSearch && debouncedQuery.trim() !== '') {
+    const query = debouncedQuery.trim().toLowerCase()
     visible = visible.filter(
       (t) =>
         t.title.toLowerCase().includes(query) || t.description.toLowerCase().includes(query)
@@ -112,6 +125,9 @@ export default function TaskApp({
           onSearchChange={showSearch ? setSearchQuery : undefined}
           onClearSearch={showSearch ? () => setSearchQuery('') : undefined}
         />
+      )}
+      {showSearch && searchQuery !== debouncedQuery && searchQuery !== '' && (
+        <p id="searching-indicator">Searching...</p>
       )}
       {showFilterBar && displayedTasks.length === 0 && (
         <p id="filter-empty-message">No tasks match this filter</p>

@@ -228,5 +228,28 @@
       "maintainability": 90,
       "overall": "The code is well-structured and maintainable, but could benefit from a few improvements to make it more robust and error-free. With some minor tweaks, it would be a solid example of how to use useEffect to persist data to local storage."
     }
+  },
+  {
+    "challengeId": "11-useeffect-debounced-search",
+    "challengeName": "useEffect - Debounced Search",
+    "aiReview": {
+      "challengeId": "11-useeffect-debounced-search",
+      "timestamp": "2026-08-15T07:12:32.189Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code uses a clear and consistent naming convention, making it easy to understand and follow.",
+        "The use of TypeScript and React hooks demonstrates a good understanding of modern web development principles.",
+        "The code is well-organized, with each component and function having a clear and specific responsibility."
+      ],
+      "improvements": [
+        "Some of the variable names could be more descriptive, such as `debouncedQuery` could be renamed to `filteredSearchTerm` to better convey its purpose.",
+        "The `handleToggle` and `handleUpdateTask` functions could be extracted into separate files or modules to improve code organization and reusability.",
+        "The use of `setTimeout` and `clearTimeout` could be replaced with a more modern approach using `useEffect` with a cleanup function to improve code readability and maintainability."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code demonstrates a good understanding of React and TypeScript principles, but could benefit from some minor improvements to make it more readable and maintainable. With some refactoring and organization, this code could be even more efficient and scalable."
+    }
   }
 ]
