@@ -389,5 +389,28 @@
       "maintainability": 90,
       "overall": "The code is well-structured and follows good practices, but there are some minor improvements that can be made to make it more efficient and robust."
     }
+  },
+  {
+    "challengeId": "18-usereducer-complex-state",
+    "challengeName": "useReducer - Complex State Management",
+    "aiReview": {
+      "challengeId": "18-usereducer-complex-state",
+      "timestamp": "2026-08-15T07:27:28.341Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "Effective use of TypeScript type annotations and interfaces",
+        "Clear separation of concerns between components and reducers",
+        "Well-structured code with consistent naming conventions"
+      ],
+      "improvements": [
+        "Consider adding more comments to explain complex logic and reducer actions",
+        "Some functions, such as `handleToggle` and `handleUpdateTask`, could be simplified by removing unnecessary checks and using more concise syntax",
+        "The `taskReducer` could benefit from additional tests to ensure its correctness and edge cases"
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code demonstrates a good understanding of React, TypeScript, and reducer-based state management. However, there are opportunities for improvement in terms of commenting and simplifying certain functions. With some additional attention to these areas, the code can become even more maintainable and efficient."
+    }
   }
 ]

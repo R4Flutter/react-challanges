@@ -8,12 +8,14 @@ import FilterBar from './FilterBar'
 import StatsPanel from './StatsPanel'
 import Button from './Button'
 import { useTheme } from '../contexts/ThemeContext'
+import { ADD_TASK, TOGGLE_TASK, UPDATE_TASK } from '../reducers/taskReducer'
+import type { TaskAction } from '../reducers/taskReducer'
 import type { FilterValue, SortValue } from './FilterBar'
 
 interface TaskAppProps {
   tasks?: Task[]
   setTasks?: Dispatch<SetStateAction<Task[]>>
-  dispatch?: (action: { type: string; payload?: unknown }) => void
+  dispatch?: (action: TaskAction) => void
   showForm?: boolean
   countFormat?: string
   showFilterBar?: boolean
@@ -101,7 +103,7 @@ export default function TaskApp({
     if (setTasks) {
       setTasks((prev) => prev.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t)))
     } else if (dispatch) {
-      dispatch({ type: 'TOGGLE_TASK', payload: id })
+      dispatch({ type: TOGGLE_TASK, payload: id })
     }
   }
 
@@ -109,7 +111,7 @@ export default function TaskApp({
     if (setTasks) {
       setTasks((prev) => prev.map((t) => (t.id === id ? { ...t, ...updates } : t)))
     } else if (dispatch) {
-      dispatch({ type: 'UPDATE_TASK', payload: { id, ...updates } })
+      dispatch({ type: UPDATE_TASK, payload: { id, ...updates } })
     }
   }
 
@@ -117,7 +119,7 @@ export default function TaskApp({
     if (setTasks) {
       setTasks((prev) => [...prev, task])
     } else if (dispatch) {
-      dispatch({ type: 'ADD_TASK', payload: task })
+      dispatch({ type: ADD_TASK, payload: task })
     }
   }
 
