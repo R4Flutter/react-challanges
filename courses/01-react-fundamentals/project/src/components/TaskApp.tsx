@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { Dispatch, SetStateAction } from 'react'
 import type { Task } from './TaskList'
 import { DEFAULT_CATEGORY } from './TaskList'
 import TaskList from './TaskList'
 import TaskForm from './TaskForm'
 import FilterBar from './FilterBar'
+import StatsPanel from './StatsPanel'
 import type { FilterValue, SortValue } from './FilterBar'
 
 interface TaskAppProps {
@@ -32,6 +33,7 @@ export default function TaskApp({
   showFilterBar = false,
   showSearch = false,
   showCategories = false,
+  showStatsPanel = false,
   onDelete,
 }: TaskAppProps) {
   const [filter, setFilter] = useState<FilterValue>('all')
@@ -50,6 +52,35 @@ export default function TaskApp({
   ]
 
   const formCategories = [...new Set([DEFAULT_CATEGORY, ...uniqueCategories])]
+
+  const stats = useMemo(() => {
+    const completedCount = tasks.filter((t) => t.completed).length
+    const activeCount = tasks.length - completedCount
+    const now = new Date()
+    const overdueCount = tasks.filter((t) => {
+      if (t.completed || t.dueDate === undefined || t.dueDate === '') {
+        return false
+      }
+      const due = new Date(t.dueDate)
+      return !Number.isNaN(due.getTime()) && due.getTime() < now.getTime()
+    }).length
+    const categoryBreakdown: Record<string, number> = {}
+    const priorityBreakdown: Record<string, number> = {}
+    for (const task of tasks) {
+      const category = task.category ?? DEFAULT_CATEGORY
+      categoryBreakdown[category] = (categoryBreakdown[category] ?? 0) + 1
+      priorityBreakdown[task.priority] = (priorityBreakdown[task.priority] ?? 0) + 1
+    }
+    return {
+      total: tasks.length,
+      completed: completedCount,
+      active: activeCount,
+      overdue: overdueCount,
+      completedPercentage: tasks.length > 0 ? Math.round((completedCount / tasks.length) * 100) : 0,
+      categoryBreakdown,
+      priorityBreakdown,
+    }
+  }, [tasks])
 
   useEffect(() => {
     if (searchQuery === debouncedQuery) {
@@ -138,6 +169,17 @@ export default function TaskApp({
   return (
     <div>
       {showForm && <TaskForm onAddTask={handleAddTask} categories={showCategories ? formCategories : undefined} />}
+      {showStatsPanel && (
+        <StatsPanel
+          total={stats.total}
+          completed={stats.completed}
+          active={stats.active}
+          overdue={stats.overdue}
+          completedPercentage={stats.completedPercentage}
+          categoryBreakdown={stats.categoryBreakdown}
+          priorityBreakdown={stats.priorityBreakdown}
+        />
+      )}
       {showFilterBar && (
         <FilterBar
           filter={filter}
