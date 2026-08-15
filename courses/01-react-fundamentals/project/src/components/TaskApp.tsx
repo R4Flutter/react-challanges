@@ -3,6 +3,7 @@ import type { Dispatch, SetStateAction } from 'react'
 import type { Task } from './TaskList'
 import { DEFAULT_CATEGORY } from './TaskList'
 import TaskList from './TaskList'
+import ErrorBoundary from './ErrorBoundary'
 import TaskForm from './TaskForm'
 import FilterBar from './FilterBar'
 import StatsPanel from './StatsPanel'
@@ -224,15 +225,17 @@ export default function TaskApp({
       {showFilterBar && displayedTasks.length === 0 && (
         <p id="filter-empty-message">No tasks match this filter</p>
       )}
-      <TaskList
-        tasks={displayedTasks}
-        countText={countText}
-        onToggle={handleToggle}
-        onDelete={onDelete}
-        onUpdateTask={handleUpdateTask}
-        editingId={editingId}
-        onStartEdit={setEditingId}
-      />
+      <ErrorBoundary>
+        <TaskList
+          tasks={displayedTasks}
+          countText={countText}
+          onToggle={handleToggle}
+          onDelete={onDelete}
+          onUpdateTask={handleUpdateTask}
+          editingId={editingId}
+          onStartEdit={setEditingId}
+        />
+      </ErrorBoundary>
     </div>
   )
 }
