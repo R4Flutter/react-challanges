@@ -13,6 +13,7 @@ interface TaskAppProps {
   showForm?: boolean
   countFormat?: string
   showFilterBar?: boolean
+  showSearch?: boolean
   showStatsPanel?: boolean
   onDelete?: (id: string | number) => void
   linkToTaskDetail?: boolean
@@ -27,11 +28,13 @@ export default function TaskApp({
   showForm = false,
   countFormat = 'tasks',
   showFilterBar = false,
+  showSearch = false,
   onDelete,
 }: TaskAppProps) {
   const [filter, setFilter] = useState<FilterValue>('all')
   const [sortOrder, setSortOrder] = useState<SortValue>('Recently Added')
   const [editingId, setEditingId] = useState<string | number | null>(null)
+  const [searchQuery, setSearchQuery] = useState('')
 
   const handleToggle = (id: string | number) => {
     if (setTasks) {
@@ -66,6 +69,14 @@ export default function TaskApp({
     }
   }
 
+  if (showFilterBar && showSearch && searchQuery.trim() !== '') {
+    const query = searchQuery.trim().toLowerCase()
+    visible = visible.filter(
+      (t) =>
+        t.title.toLowerCase().includes(query) || t.description.toLowerCase().includes(query)
+    )
+  }
+
   const displayedTasks = showFilterBar
     ? [...visible].sort((a, b) => {
         if (sortOrder === 'Alphabetical') {
@@ -97,6 +108,9 @@ export default function TaskApp({
           onFilterChange={setFilter}
           sort={sortOrder}
           onSortChange={setSortOrder}
+          search={showSearch ? searchQuery : undefined}
+          onSearchChange={showSearch ? setSearchQuery : undefined}
+          onClearSearch={showSearch ? () => setSearchQuery('') : undefined}
         />
       )}
       {showFilterBar && displayedTasks.length === 0 && (

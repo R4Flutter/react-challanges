@@ -10,6 +10,9 @@ interface FilterBarProps {
   onFilterChange?: (filter: FilterValue) => void
   sort?: SortValue
   onSortChange?: (sort: SortValue) => void
+  search?: string
+  onSearchChange?: (search: string) => void
+  onClearSearch?: () => void
 }
 
 export default function FilterBar({
@@ -17,9 +20,13 @@ export default function FilterBar({
   onFilterChange,
   sort = 'Recently Added',
   onSortChange,
+  search = '',
+  onSearchChange,
+  onClearSearch,
 }: FilterBarProps) {
+  const rootId = onSearchChange ? 'search-bar' : 'filter-bar'
   return (
-    <div id="filter-bar">
+    <div id={rootId}>
       <button
         type="button"
         data-active={filter === 'all' ? 'true' : undefined}
@@ -41,6 +48,20 @@ export default function FilterBar({
       >
         Completed
       </button>
+      {onSearchChange && (
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search tasks"
+          value={search}
+          onChange={(e) => onSearchChange(e.target.value)}
+        />
+      )}
+      {onClearSearch && search !== '' && (
+        <button type="button" id="clear-search" onClick={onClearSearch}>
+          Clear search
+        </button>
+      )}
       {onSortChange && (
         <select
           id="sort-order"
