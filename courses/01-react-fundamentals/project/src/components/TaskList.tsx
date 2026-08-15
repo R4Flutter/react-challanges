@@ -43,6 +43,7 @@ export default function TaskList({
   onUpdateTask,
   editingId,
   onStartEdit,
+  linkToTaskDetail = false,
 }: TaskListProps) {
   const items = tasks ?? DEFAULT_TASKS
   return (
@@ -64,6 +65,7 @@ export default function TaskList({
           onUpdateTask={onUpdateTask}
           editingId={editingId}
           onStartEdit={onStartEdit}
+          linkToTaskDetail={linkToTaskDetail}
         />
       ))}
     </section>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import type { TaskUpdates } from './TaskList'
 import { DEFAULT_CATEGORY } from './TaskList'
 import Button from './Button'
@@ -21,6 +22,7 @@ interface TaskCardProps {
   onUpdateTask?: (id: string | number, updates: TaskUpdates) => void
   editingId?: string | number | null
   onStartEdit?: (id: string | number | null) => void
+  linkToTaskDetail?: boolean
 }
 
 function formatDueDate(dueDate: string | number): string {
@@ -70,6 +72,7 @@ function TaskCard({
   onUpdateTask,
   editingId = null,
   onStartEdit,
+  linkToTaskDetail = false,
 }: TaskCardProps) {
   const taskIdentifier: string | number = id ?? taskId ?? ''
   const taskCategory = category ?? DEFAULT_CATEGORY
@@ -163,7 +166,13 @@ function TaskCard({
       data-completed={completed ? 'true' : undefined}
       data-overdue={isOverdue ? 'true' : undefined}
     >
-      <h2 style={completed ? { textDecoration: 'line-through' } : undefined}>{title}</h2>
+      <h2 style={completed ? { textDecoration: 'line-through' } : undefined}>
+        {linkToTaskDetail && taskIdentifier !== '' ? (
+          <Link to={`/challenge/21-react-router/task/${taskIdentifier}`}>{title}</Link>
+        ) : (
+          title
+        )}
+      </h2>
       <p style={completed ? { textDecoration: 'line-through' } : undefined}>{description}</p>
       <p>
         Priority: <Badge variant="priority">{priority}</Badge>

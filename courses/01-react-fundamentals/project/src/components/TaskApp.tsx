@@ -40,6 +40,7 @@ export default function TaskApp({
   showCategories = false,
   showStatsPanel = false,
   onDelete,
+  linkToTaskDetail = false,
 }: TaskAppProps) {
   const [filter, setFilter] = useState<FilterValue>('all')
   const [sortOrder, setSortOrder] = useState<SortValue>('Recently Added')
@@ -234,6 +235,7 @@ export default function TaskApp({
           onUpdateTask={handleUpdateTask}
           editingId={editingId}
           onStartEdit={setEditingId}
+          linkToTaskDetail={linkToTaskDetail}
         />
       </ErrorBoundary>
     </div>
