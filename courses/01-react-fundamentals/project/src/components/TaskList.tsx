@@ -10,6 +10,8 @@ export interface Task {
   dueDate?: string | number
 }
 
+export const DEFAULT_CATEGORY = 'General'
+
 export interface TaskUpdates {
   title: string
   description: string
@@ -28,9 +30,9 @@ interface TaskListProps {
 }
 
 const DEFAULT_TASKS: Task[] = [
-  { id: 1, title: 'Task One', description: 'First task', priority: 'High', completed: false },
-  { id: 2, title: 'Task Two', description: 'Second task', priority: 'Medium', completed: false },
-  { id: 3, title: 'Task Three', description: 'Third task', priority: 'Low', completed: false },
+  { id: 1, title: 'Task One', description: 'First task', priority: 'High', completed: false, category: 'General', tags: [] },
+  { id: 2, title: 'Task Two', description: 'Second task', priority: 'Medium', completed: false, category: 'General', tags: [] },
+  { id: 3, title: 'Task Three', description: 'Third task', priority: 'Low', completed: false, category: 'General', tags: [] },
 ]
 
 export default function TaskList({
@@ -54,6 +56,8 @@ export default function TaskList({
           description={task.description}
           priority={task.priority}
           completed={task.completed}
+          category={task.category}
+          tags={task.tags}
           onToggle={onToggle}
           onDelete={onDelete}
           onUpdateTask={onUpdateTask}

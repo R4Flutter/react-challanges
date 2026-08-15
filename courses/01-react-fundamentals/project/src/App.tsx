@@ -8,16 +8,25 @@ import TaskDetailPage from './components/TaskDetailPage'
 import FetchDemoView from './components/FetchDemoView'
 import { ThemeProvider } from './contexts/ThemeContext'
 import type { Task } from './components/TaskList'
+import { DEFAULT_CATEGORY } from './components/TaskList'
 
 const STORAGE_KEY = 'task-app-tasks'
 
 const INITIAL_TASKS: Task[] = [
-  { id: 1, title: 'First Task', description: 'Description one', priority: 'High', completed: false },
-  { id: 2, title: 'Second Task', description: 'Description two', priority: 'Medium', completed: false },
-  { id: 3, title: 'Third Task', description: 'Description three', priority: 'Low', completed: false },
-  { id: 4, title: 'Fourth Task', description: 'Description four', priority: 'Medium', completed: false },
-  { id: 5, title: 'Fifth Task', description: 'Description five', priority: 'High', completed: false },
+  { id: 1, title: 'First Task', description: 'Description one', priority: 'High', completed: false, category: 'General', tags: [] },
+  { id: 2, title: 'Second Task', description: 'Description two', priority: 'Medium', completed: false, category: 'General', tags: [] },
+  { id: 3, title: 'Third Task', description: 'Description three', priority: 'Low', completed: false, category: 'General', tags: [] },
+  { id: 4, title: 'Fourth Task', description: 'Description four', priority: 'Medium', completed: false, category: 'General', tags: [] },
+  { id: 5, title: 'Fifth Task', description: 'Description five', priority: 'High', completed: false, category: 'General', tags: [] },
 ]
+
+function normalizeTask(task: Partial<Task>): Task {
+  return {
+    ...task,
+    category: task.category ?? DEFAULT_CATEGORY,
+    tags: task.tags ?? [],
+  } as Task
+}
 
 function loadInitialTasks(): Task[] {
   try {
@@ -26,7 +35,10 @@ function loadInitialTasks(): Task[] {
       return INITIAL_TASKS
     }
     const parsed: unknown = JSON.parse(raw)
-    return Array.isArray(parsed) ? (parsed as Task[]) : INITIAL_TASKS
+    if (!Array.isArray(parsed)) {
+      return INITIAL_TASKS
+    }
+    return parsed.map(normalizeTask)
   } catch {
     return INITIAL_TASKS
   }
@@ -62,7 +74,7 @@ function AppContent() {
             <Route path="/challenge/09-search-functionality" element={<TaskApp tasks={tasks} setTasks={setTasks} showForm countFormat="tasks" showFilterBar showSearch />} />
             <Route path="/challenge/10-useeffect-local-storage" element={<TaskApp tasks={tasks} setTasks={setTasks} showForm countFormat="tasks" />} />
             <Route path="/challenge/11-useeffect-debounced-search" element={<TaskApp tasks={tasks} setTasks={setTasks} showForm countFormat="tasks" showFilterBar showSearch />} />
-            <Route path="/challenge/12-categories-and-tags" element={<TaskApp tasks={tasks} setTasks={setTasks} showForm countFormat="tasks" showFilterBar />} />
+            <Route path="/challenge/12-categories-and-tags" element={<TaskApp tasks={tasks} setTasks={setTasks} showForm countFormat="tasks" showFilterBar showSearch showCategories />} />
             <Route path="/challenge/13-due-dates-and-sorting" element={<TaskApp tasks={tasks} setTasks={setTasks} showForm countFormat="tasks" showFilterBar />} />
             <Route path="/challenge/14-task-statistics-dashboard" element={<TaskApp tasks={tasks} setTasks={setTasks} showForm countFormat="tasks" showStatsPanel />} />
             <Route path="/challenge/15-component-organization" element={<TaskApp tasks={tasks} setTasks={setTasks} showForm countFormat="tasks" />} />

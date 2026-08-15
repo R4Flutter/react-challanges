@@ -1,16 +1,31 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 import type { Task } from './TaskList'
+import { DEFAULT_CATEGORY } from './TaskList'
+
+const DEFAULT_CATEGORIES = ['General', 'Work', 'Personal']
 
 interface TaskFormProps {
   onAddTask?: (task: Task) => void
+  categories?: string[]
 }
 
-export default function TaskForm({ onAddTask }: TaskFormProps) {
+function parseTags(value: string): string[] {
+  return value
+    .split(',')
+    .map((tag) => tag.trim())
+    .filter((tag) => tag !== '')
+}
+
+export default function TaskForm({ onAddTask, categories }: TaskFormProps) {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [priority, setPriority] = useState('Medium')
+  const [category, setCategory] = useState(DEFAULT_CATEGORY)
+  const [tagsInput, setTagsInput] = useState('')
   const [error, setError] = useState('')
+
+  const categoryOptions = categories && categories.length > 0 ? categories : DEFAULT_CATEGORIES
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
@@ -23,11 +38,15 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
       title: title.trim(),
       description: description.trim(),
       priority,
+      category,
+      tags: parseTags(tagsInput),
       completed: false,
     })
     setTitle('')
     setDescription('')
     setPriority('Medium')
+    setCategory(DEFAULT_CATEGORY)
+    setTagsInput('')
     setError('')
   }
 
@@ -62,6 +81,30 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
           <option value="Medium">Medium</option>
           <option value="High">High</option>
         </select>
+      </div>
+      <div>
+        <label htmlFor="task-form-category">Category</label>
+        <select
+          id="task-form-category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          {categoryOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label htmlFor="task-form-tags">Tags</label>
+        <input
+          id="task-form-tags"
+          type="text"
+          placeholder="Comma separated tags"
+          value={tagsInput}
+          onChange={(e) => setTagsInput(e.target.value)}
+        />
       </div>
       {error && (
         <p id="task-form-error" role="alert">

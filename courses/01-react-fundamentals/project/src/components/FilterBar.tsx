@@ -13,6 +13,9 @@ interface FilterBarProps {
   search?: string
   onSearchChange?: (search: string) => void
   onClearSearch?: () => void
+  categories?: string[]
+  category?: string
+  onCategoryChange?: (category: string) => void
 }
 
 export default function FilterBar({
@@ -23,6 +26,9 @@ export default function FilterBar({
   search = '',
   onSearchChange,
   onClearSearch,
+  categories = [],
+  category = 'all',
+  onCategoryChange,
 }: FilterBarProps) {
   const rootId = onSearchChange ? 'search-bar' : 'filter-bar'
   return (
@@ -48,6 +54,20 @@ export default function FilterBar({
       >
         Completed
       </button>
+      {onCategoryChange && (
+        <select
+          id="category-filter"
+          value={category}
+          onChange={(e) => onCategoryChange(e.target.value)}
+        >
+          <option value="all">All categories</option>
+          {categories.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      )}
       {onSearchChange && (
         <input
           id="search-input"

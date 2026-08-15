@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { Dispatch, SetStateAction } from 'react'
 import type { Task } from './TaskList'
+import { DEFAULT_CATEGORY } from './TaskList'
 import TaskList from './TaskList'
 import TaskForm from './TaskForm'
 import FilterBar from './FilterBar'
@@ -14,6 +15,7 @@ interface TaskAppProps {
   countFormat?: string
   showFilterBar?: boolean
   showSearch?: boolean
+  showCategories?: boolean
   showStatsPanel?: boolean
   onDelete?: (id: string | number) => void
   linkToTaskDetail?: boolean
@@ -29,6 +31,7 @@ export default function TaskApp({
   countFormat = 'tasks',
   showFilterBar = false,
   showSearch = false,
+  showCategories = false,
   onDelete,
 }: TaskAppProps) {
   const [filter, setFilter] = useState<FilterValue>('all')
@@ -36,6 +39,17 @@ export default function TaskApp({
   const [editingId, setEditingId] = useState<string | number | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [debouncedQuery, setDebouncedQuery] = useState('')
+  const [categoryFilter, setCategoryFilter] = useState('all')
+
+  const uniqueCategories = [
+    ...new Set(
+      tasks
+        .map((t) => t.category ?? DEFAULT_CATEGORY)
+        .filter((c) => c !== '' && c !== undefined)
+    ),
+  ]
+
+  const formCategories = [...new Set([DEFAULT_CATEGORY, ...uniqueCategories])]
 
   useEffect(() => {
     if (searchQuery === debouncedQuery) {
@@ -82,6 +96,10 @@ export default function TaskApp({
     }
   }
 
+  if (showFilterBar && showCategories && categoryFilter !== 'all') {
+    visible = visible.filter((t) => (t.category ?? DEFAULT_CATEGORY) === categoryFilter)
+  }
+
   if (showFilterBar && showSearch && debouncedQuery.trim() !== '') {
     const query = debouncedQuery.trim().toLowerCase()
     visible = visible.filter(
@@ -114,7 +132,7 @@ export default function TaskApp({
 
   return (
     <div>
-      {showForm && <TaskForm onAddTask={handleAddTask} />}
+      {showForm && <TaskForm onAddTask={handleAddTask} categories={showCategories ? formCategories : undefined} />}
       {showFilterBar && (
         <FilterBar
           filter={filter}
@@ -124,6 +142,9 @@ export default function TaskApp({
           search={showSearch ? searchQuery : undefined}
           onSearchChange={showSearch ? setSearchQuery : undefined}
           onClearSearch={showSearch ? () => setSearchQuery('') : undefined}
+          categories={showCategories ? uniqueCategories : undefined}
+          category={showCategories ? categoryFilter : undefined}
+          onCategoryChange={showCategories ? setCategoryFilter : undefined}
         />
       )}
       {showSearch && searchQuery !== debouncedQuery && searchQuery !== '' && (

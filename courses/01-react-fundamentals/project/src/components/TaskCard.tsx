@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { TaskUpdates } from './TaskList'
+import { DEFAULT_CATEGORY } from './TaskList'
 
 interface TaskCardProps {
   id?: string | number
@@ -8,6 +9,8 @@ interface TaskCardProps {
   description: string
   priority: string
   completed?: boolean
+  category?: string
+  tags?: string[]
   onToggle?: (id: string | number) => void
   onDelete?: (id: string | number) => void
   onUpdateTask?: (id: string | number, updates: TaskUpdates) => void
@@ -22,6 +25,8 @@ export default function TaskCard({
   description,
   priority,
   completed = false,
+  category,
+  tags = [],
   onToggle,
   onDelete,
   onUpdateTask,
@@ -29,6 +34,7 @@ export default function TaskCard({
   onStartEdit,
 }: TaskCardProps) {
   const taskIdentifier: string | number = id ?? taskId ?? ''
+  const taskCategory = category ?? DEFAULT_CATEGORY
   const isEditing = editingId === taskIdentifier
   const [editTitle, setEditTitle] = useState(title)
   const [editDescription, setEditDescription] = useState(description)
@@ -118,6 +124,14 @@ export default function TaskCard({
       <h2 style={completed ? { textDecoration: 'line-through' } : undefined}>{title}</h2>
       <p style={completed ? { textDecoration: 'line-through' } : undefined}>{description}</p>
       <p>Priority: {priority}</p>
+      <p id="task-category">Category: {taskCategory}</p>
+      <div id="task-tags">
+        {tags.map((tag) => (
+          <span key={tag} data-tag={tag} className="task-tag">
+            {tag}
+          </span>
+        ))}
+      </div>
       {onToggle && (
         <input
           type="checkbox"
