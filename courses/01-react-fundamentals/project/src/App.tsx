@@ -91,7 +91,7 @@ function AppContent() {
             <Route path="/challenge/21-react-router" element={<TaskApp tasks={tasks} dispatch={dispatch} showForm countFormat="tasks" linkToTaskDetail />} />
             <Route path="/challenge/21-react-router/task/:id" element={<TaskDetailPage />} />
             <Route path="/challenge/22-data-fetching" element={<FetchDemoView />} />
-            <Route path="/challenge/23-useref-focus-management" element={<TaskApp tasks={tasks} dispatch={dispatch} showForm countFormat="tasks" showFilterBar />} />
+            <Route path="/challenge/23-useref-focus-management" element={<TaskApp tasks={tasks} dispatch={dispatch} showForm countFormat="tasks" showFilterBar showSearch />} />
           </Routes>
         </main>
       </div>

@@ -1,4 +1,4 @@
-import type { ChangeEvent } from 'react'
+import type { ChangeEvent, Ref } from 'react'
 
 interface FormInputProps {
   id?: string
@@ -8,6 +8,7 @@ interface FormInputProps {
   type?: string
   placeholder?: string
   error?: string
+  inputRef?: Ref<HTMLInputElement>
 }
 
 export default function FormInput({
@@ -18,6 +19,7 @@ export default function FormInput({
   type = 'text',
   placeholder,
   error,
+  inputRef,
 }: FormInputProps) {
   return (
     <div className="form-field">
@@ -28,6 +30,7 @@ export default function FormInput({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        ref={inputRef}
         aria-invalid={error ? true : undefined}
       />
       {error && (
