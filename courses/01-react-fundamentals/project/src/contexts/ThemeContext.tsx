@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
+import { createContext, useContext, type ReactNode } from 'react'
+import useLocalStorage from '../hooks/useLocalStorage'
 
 export type Theme = 'light' | 'dark'
 
@@ -11,23 +12,8 @@ export interface ThemeContextValue {
 // eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext<ThemeContextValue | null>(null)
 
-const THEME_STORAGE_KEY = 'task-app-theme'
-
-function loadInitialTheme(): Theme {
-  try {
-    const stored = localStorage.getItem(THEME_STORAGE_KEY)
-    return stored === 'dark' ? 'dark' : 'light'
-  } catch {
-    return 'light'
-  }
-}
-
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(loadInitialTheme)
-
-  useEffect(() => {
-    localStorage.setItem(THEME_STORAGE_KEY, theme)
-  }, [theme])
+  const [theme, setTheme] = useLocalStorage<Theme>('task-app-theme', 'light')
 
   const value: ThemeContextValue = {
     theme,

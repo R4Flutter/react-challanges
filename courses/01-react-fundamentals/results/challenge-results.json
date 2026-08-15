@@ -3642,7 +3642,7 @@
   {
     "challengeId": "10-useeffect-local-storage",
     "challengeName": "useEffect - Local Storage Persistence",
-    "timestamp": "2026-08-15T07:11:16.190Z",
+    "timestamp": "2026-08-15T07:25:44.395Z",
     "scores": {
       "functionalTests": 100,
       "codeQuality": 100,
@@ -3672,7 +3672,7 @@
               "fullName": " Challenge 10: useEffect - Local Storage Persistence App should render without crashing",
               "status": "passed",
               "title": "App should render without crashing",
-              "duration": 111,
+              "duration": 108,
               "failureMessages": []
             },
             {
@@ -3683,12 +3683,12 @@
               "fullName": " Challenge 10: useEffect - Local Storage Persistence App should have routes for challenge 10",
               "status": "passed",
               "title": "App should have routes for challenge 10",
-              "duration": 11,
+              "duration": 12,
               "failureMessages": []
             }
           ],
-          "startTime": 1786777880440,
-          "endTime": 1786777880562,
+          "startTime": 1786778748645,
+          "endTime": 1786778748766,
           "status": "passed",
           "message": "",
           "name": "C:/Users/rajna/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-10.test.tsx"
@@ -3786,12 +3786,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 385,
+                          "duration": 396,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-15T07:11:29.858Z",
+                          "startTime": "2026-08-15T07:25:58.298Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3820,12 +3820,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 288,
+                          "duration": 294,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-15T07:11:30.414Z",
+                          "startTime": "2026-08-15T07:25:58.894Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3847,41 +3847,41 @@
     },
     "aiReviewResults": {
       "challengeId": "10-useeffect-local-storage",
-      "timestamp": "2026-08-15T07:11:31.180Z",
+      "timestamp": "2026-08-15T07:25:59.682Z",
       "score": 88,
       "feedback": [],
       "strengths": [
-        "The code is well-structured and easy to follow, with clear separation of concerns between the AppContent component and the useEffect hook.",
-        "The use of a constant for the storage key is a good practice to avoid magic strings.",
-        "The code is well-documented with clear and concise comments."
+        "The use of `useMemo` to normalize tasks is a great optimization technique.",
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of a separate `useLocalStorage` hook is a good practice for encapsulating local storage logic."
       ],
       "improvements": [
-        "The useEffect hook that saves tasks to local storage could be improved by adding a check to ensure that the tasks array is not empty before saving.",
-        "The loadInitialTasks function could be simplified by using the optional chaining operator (?.) to avoid the need for a try-catch block.",
-        "The AppContent component could benefit from a more robust way of handling errors, such as displaying an error message to the user when something goes wrong."
+        "The `useEffect` hook for saving tasks to local storage can be improved by adding a dependency on the `tasks` array, so it only runs when the tasks change.",
+        "The `normalizeTask` function can be simplified by using the spread operator and optional chaining to avoid creating a new object.",
+        "The `handleDelete` function can be improved by using a more robust way to handle confirmation, such as using a `confirm` function with a custom message."
       ],
       "readability": 85,
       "maintainability": 90,
-      "overall": "The code is well-structured and maintainable, but could benefit from a few improvements to make it more robust and error-free. With some minor tweaks, it would be a solid example of how to use useEffect to persist data to local storage."
+      "overall": "The code is well-structured and follows good practices, but there are some minor improvements that can be made to make it more efficient and robust."
     },
     "aiResults": {
       "challengeId": "10-useeffect-local-storage",
-      "timestamp": "2026-08-15T07:11:31.180Z",
+      "timestamp": "2026-08-15T07:25:59.682Z",
       "score": 88,
       "feedback": [],
       "strengths": [
-        "The code is well-structured and easy to follow, with clear separation of concerns between the AppContent component and the useEffect hook.",
-        "The use of a constant for the storage key is a good practice to avoid magic strings.",
-        "The code is well-documented with clear and concise comments."
+        "The use of `useMemo` to normalize tasks is a great optimization technique.",
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of a separate `useLocalStorage` hook is a good practice for encapsulating local storage logic."
       ],
       "improvements": [
-        "The useEffect hook that saves tasks to local storage could be improved by adding a check to ensure that the tasks array is not empty before saving.",
-        "The loadInitialTasks function could be simplified by using the optional chaining operator (?.) to avoid the need for a try-catch block.",
-        "The AppContent component could benefit from a more robust way of handling errors, such as displaying an error message to the user when something goes wrong."
+        "The `useEffect` hook for saving tasks to local storage can be improved by adding a dependency on the `tasks` array, so it only runs when the tasks change.",
+        "The `normalizeTask` function can be simplified by using the spread operator and optional chaining to avoid creating a new object.",
+        "The `handleDelete` function can be improved by using a more robust way to handle confirmation, such as using a `confirm` function with a custom message."
       ],
       "readability": 85,
       "maintainability": 90,
-      "overall": "The code is well-structured and maintainable, but could benefit from a few improvements to make it more robust and error-free. With some minor tweaks, it would be a solid example of how to use useEffect to persist data to local storage."
+      "overall": "The code is well-structured and follows good practices, but there are some minor improvements that can be made to make it more efficient and robust."
     }
   },
   {
@@ -5637,6 +5637,298 @@
       "readability": 85,
       "maintainability": 90,
       "overall": "The code is well-structured and follows best practices for React and TypeScript development. However, there are a few areas that could be improved for better maintainability and reusability."
+    }
+  },
+  {
+    "challengeId": "17-custom-hook-uselocalstorage",
+    "challengeName": "Custom Hook - useLocalStorage",
+    "timestamp": "2026-08-15T07:25:21.081Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 100,
+      "aiReview": 88
+    },
+    "totalScore": 98.2,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 17: Custom Hook - useLocalStorage"
+              ],
+              "fullName": " Challenge 17: Custom Hook - useLocalStorage App should render without crashing",
+              "status": "passed",
+              "title": "App should render without crashing",
+              "duration": 108,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1786778725212,
+          "endTime": 1786778725320,
+          "status": "passed",
+          "message": "",
+          "name": "C:/Users/rajna/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-17.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\App.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\contexts\\ThemeContext.tsx",
+          "messages": [],
+          "suppressedMessages": [
+            {
+              "ruleId": "react-refresh/only-export-components",
+              "severity": 1,
+              "message": "Fast refresh only works when a file only exports components. Move your React context(s) to a separate file.",
+              "line": 13,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "reactContext",
+              "endLine": 13,
+              "endColumn": 26,
+              "suppressions": [
+                {
+                  "kind": "directive",
+                  "justification": ""
+                }
+              ]
+            },
+            {
+              "ruleId": "react-refresh/only-export-components",
+              "severity": 1,
+              "message": "Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.",
+              "line": 28,
+              "column": 17,
+              "nodeType": "Identifier",
+              "messageId": "namedExport",
+              "endLine": 28,
+              "endColumn": 25,
+              "suppressions": [
+                {
+                  "kind": "directive",
+                  "justification": ""
+                }
+              ]
+            }
+          ],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\rajna\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\hooks\\useLocalStorage.ts",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "customHook"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/hooks/useLocalStorage.ts",
+          "patternsFound": [],
+          "patternsMissing": [
+            "functionalComponent",
+            "customHook"
+          ]
+        },
+        {
+          "file": "src/App.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "customHook"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/contexts/ThemeContext.tsx",
+          "patternsFound": [
+            "functionalComponent"
+          ],
+          "patternsMissing": [
+            "customHook"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "title": "challenge-17.spec.ts",
+          "file": "challenge-17.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 17: Custom Hook useLocalStorage - E2E",
+              "file": "challenge-17.spec.ts",
+              "line": 3,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should display task list",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 400,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-15T07:25:35.136Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "10801a4643fac957b65b-21592ac323f744497a60",
+                  "file": "challenge-17.spec.ts",
+                  "line": 8,
+                  "column": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "screenshots": []
+    },
+    "aiReviewResults": {
+      "challengeId": "17-custom-hook-uselocalstorage",
+      "timestamp": "2026-08-15T07:25:36.170Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The useLocalStorage hook is well-structured and easy to understand.",
+        "The code uses TypeScript, which helps with type safety and maintainability.",
+        "The use of functional components and hooks follows best practices."
+      ],
+      "improvements": [
+        "The useLocalStorage hook could benefit from additional error handling for cases where the initial value is not a valid JSON object.",
+        "The App component has a lot of repeated code for rendering different routes. Consider using a more dynamic approach, such as using a mapping function or a separate component for rendering routes.",
+        "The ThemeContext and useTheme hook could be improved by adding more type safety and validation for the theme value."
+      ],
+      "readability": 90,
+      "maintainability": 85,
+      "overall": "The code is well-structured and follows best practices for React and TypeScript. However, there are some areas for improvement, particularly in terms of error handling and code organization."
+    },
+    "aiResults": {
+      "challengeId": "17-custom-hook-uselocalstorage",
+      "timestamp": "2026-08-15T07:25:36.170Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The useLocalStorage hook is well-structured and easy to understand.",
+        "The code uses TypeScript, which helps with type safety and maintainability.",
+        "The use of functional components and hooks follows best practices."
+      ],
+      "improvements": [
+        "The useLocalStorage hook could benefit from additional error handling for cases where the initial value is not a valid JSON object.",
+        "The App component has a lot of repeated code for rendering different routes. Consider using a more dynamic approach, such as using a mapping function or a separate component for rendering routes.",
+        "The ThemeContext and useTheme hook could be improved by adding more type safety and validation for the theme value."
+      ],
+      "readability": 90,
+      "maintainability": 85,
+      "overall": "The code is well-structured and follows best practices for React and TypeScript. However, there are some areas for improvement, particularly in terms of error handling and code organization."
     }
   }
 ]

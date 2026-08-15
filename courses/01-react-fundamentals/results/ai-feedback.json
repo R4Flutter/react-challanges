@@ -207,29 +207,6 @@
     }
   },
   {
-    "challengeId": "10-useeffect-local-storage",
-    "challengeName": "useEffect - Local Storage Persistence",
-    "aiReview": {
-      "challengeId": "10-useeffect-local-storage",
-      "timestamp": "2026-08-15T07:11:31.180Z",
-      "score": 88,
-      "feedback": [],
-      "strengths": [
-        "The code is well-structured and easy to follow, with clear separation of concerns between the AppContent component and the useEffect hook.",
-        "The use of a constant for the storage key is a good practice to avoid magic strings.",
-        "The code is well-documented with clear and concise comments."
-      ],
-      "improvements": [
-        "The useEffect hook that saves tasks to local storage could be improved by adding a check to ensure that the tasks array is not empty before saving.",
-        "The loadInitialTasks function could be simplified by using the optional chaining operator (?.) to avoid the need for a try-catch block.",
-        "The AppContent component could benefit from a more robust way of handling errors, such as displaying an error message to the user when something goes wrong."
-      ],
-      "readability": 85,
-      "maintainability": 90,
-      "overall": "The code is well-structured and maintainable, but could benefit from a few improvements to make it more robust and error-free. With some minor tweaks, it would be a solid example of how to use useEffect to persist data to local storage."
-    }
-  },
-  {
     "challengeId": "11-useeffect-debounced-search",
     "challengeName": "useEffect - Debounced Search",
     "aiReview": {
@@ -365,6 +342,52 @@
       "readability": 85,
       "maintainability": 90,
       "overall": "The code is well-structured and follows best practices for React and TypeScript development. However, there are a few areas that could be improved for better maintainability and reusability."
+    }
+  },
+  {
+    "challengeId": "17-custom-hook-uselocalstorage",
+    "challengeName": "Custom Hook - useLocalStorage",
+    "aiReview": {
+      "challengeId": "17-custom-hook-uselocalstorage",
+      "timestamp": "2026-08-15T07:25:36.170Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The useLocalStorage hook is well-structured and easy to understand.",
+        "The code uses TypeScript, which helps with type safety and maintainability.",
+        "The use of functional components and hooks follows best practices."
+      ],
+      "improvements": [
+        "The useLocalStorage hook could benefit from additional error handling for cases where the initial value is not a valid JSON object.",
+        "The App component has a lot of repeated code for rendering different routes. Consider using a more dynamic approach, such as using a mapping function or a separate component for rendering routes.",
+        "The ThemeContext and useTheme hook could be improved by adding more type safety and validation for the theme value."
+      ],
+      "readability": 90,
+      "maintainability": 85,
+      "overall": "The code is well-structured and follows best practices for React and TypeScript. However, there are some areas for improvement, particularly in terms of error handling and code organization."
+    }
+  },
+  {
+    "challengeId": "10-useeffect-local-storage",
+    "challengeName": "useEffect - Local Storage Persistence",
+    "aiReview": {
+      "challengeId": "10-useeffect-local-storage",
+      "timestamp": "2026-08-15T07:25:59.682Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The use of `useMemo` to normalize tasks is a great optimization technique.",
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of a separate `useLocalStorage` hook is a good practice for encapsulating local storage logic."
+      ],
+      "improvements": [
+        "The `useEffect` hook for saving tasks to local storage can be improved by adding a dependency on the `tasks` array, so it only runs when the tasks change.",
+        "The `normalizeTask` function can be simplified by using the spread operator and optional chaining to avoid creating a new object.",
+        "The `handleDelete` function can be improved by using a more robust way to handle confirmation, such as using a `confirm` function with a custom message."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows good practices, but there are some minor improvements that can be made to make it more efficient and robust."
     }
   }
 ]
