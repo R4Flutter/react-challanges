@@ -2,6 +2,8 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import type { Task } from './TaskList'
 import { DEFAULT_CATEGORY } from './TaskList'
+import FormInput from './FormInput'
+import Button from './Button'
 
 const DEFAULT_CATEGORIES = ['General', 'Work', 'Personal']
 
@@ -55,16 +57,14 @@ export default function TaskForm({ onAddTask, categories }: TaskFormProps) {
 
   return (
     <form id="task-form" onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="task-title">Title</label>
-        <input
-          id="task-title"
-          type="text"
-          placeholder="Task title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-      </div>
+      <FormInput
+        id="task-title"
+        label="Title"
+        type="text"
+        placeholder="Task title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
       <div>
         <label htmlFor="task-description">Description</label>
         <textarea
@@ -99,16 +99,14 @@ export default function TaskForm({ onAddTask, categories }: TaskFormProps) {
           ))}
         </select>
       </div>
-      <div>
-        <label htmlFor="task-form-tags">Tags</label>
-        <input
-          id="task-form-tags"
-          type="text"
-          placeholder="Comma separated tags"
-          value={tagsInput}
-          onChange={(e) => setTagsInput(e.target.value)}
-        />
-      </div>
+      <FormInput
+        id="task-form-tags"
+        label="Tags"
+        type="text"
+        placeholder="Comma separated tags"
+        value={tagsInput}
+        onChange={(e) => setTagsInput(e.target.value)}
+      />
       <div>
         <label htmlFor="task-form-due-date">Due date</label>
         <input
@@ -123,7 +121,7 @@ export default function TaskForm({ onAddTask, categories }: TaskFormProps) {
           {error}
         </p>
       )}
-      <button type="submit">Add Task</button>
+      <Button type="submit">Add Task</Button>
     </form>
   )
 }

@@ -1,3 +1,6 @@
+import Button from './Button'
+import FormInput from './FormInput'
+
 export type FilterValue = 'all' | 'active' | 'completed'
 export type SortValue =
   | 'Recently Added'
@@ -34,27 +37,27 @@ export default function FilterBar({
   const rootId = onSearchChange ? 'search-bar' : 'filter-bar'
   return (
     <div id={rootId}>
-      <button
+      <Button
         type="button"
         data-active={filter === 'all' ? 'true' : undefined}
         onClick={() => onFilterChange?.('all')}
       >
         All
-      </button>
-      <button
+      </Button>
+      <Button
         type="button"
         data-active={filter === 'active' ? 'true' : undefined}
         onClick={() => onFilterChange?.('active')}
       >
         Active
-      </button>
-      <button
+      </Button>
+      <Button
         type="button"
         data-active={filter === 'completed' ? 'true' : undefined}
         onClick={() => onFilterChange?.('completed')}
       >
         Completed
-      </button>
+      </Button>
       {onCategoryChange && (
         <select
           id="category-filter"
@@ -70,7 +73,7 @@ export default function FilterBar({
         </select>
       )}
       {onSearchChange && (
-        <input
+        <FormInput
           id="search-input"
           type="text"
           placeholder="Search tasks"
@@ -79,9 +82,9 @@ export default function FilterBar({
         />
       )}
       {onClearSearch && search !== '' && (
-        <button type="button" id="clear-search" onClick={onClearSearch}>
+        <Button type="button" id="clear-search" variant="secondary" onClick={onClearSearch}>
           Clear search
-        </button>
+        </Button>
       )}
       {onSortChange && (
         <select
