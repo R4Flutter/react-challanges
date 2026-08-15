@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import type { TaskUpdates } from './TaskList'
 import { DEFAULT_CATEGORY } from './TaskList'
 import Button from './Button'
@@ -55,7 +55,7 @@ function getDueDateStatus(dueDate: string | number | undefined, completed: boole
   return { status: '', overdue: false }
 }
 
-export default function TaskCard({
+function TaskCard({
   id,
   taskId,
   title,
@@ -205,3 +205,5 @@ export default function TaskCard({
     </article>
   )
 }
+
+export default React.memo(TaskCard)

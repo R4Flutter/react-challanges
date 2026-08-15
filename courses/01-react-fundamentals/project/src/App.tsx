@@ -1,5 +1,5 @@
 import './App.css'
-import { useEffect, useMemo, useReducer } from 'react'
+import { useCallback, useEffect, useMemo, useReducer } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import ChallengeList from './components/ChallengeList'
 import TaskList from './components/TaskList'
@@ -52,11 +52,14 @@ function AppContent() {
     }
   }, [tasks])
 
-  const handleDelete = (id: string | number) => {
-    if (window.confirm('Are you sure?')) {
-      dispatch({ type: DELETE_TASK, payload: id })
-    }
-  }
+  const handleDelete = useCallback(
+    (id: string | number) => {
+      if (window.confirm('Are you sure?')) {
+        dispatch({ type: DELETE_TASK, payload: id })
+      }
+    },
+    [dispatch]
+  )
 
   return (
     <BrowserRouter>
