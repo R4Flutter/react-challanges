@@ -1,5 +1,5 @@
 import './App.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ChallengeList from './components/ChallengeList'
 import TaskList from './components/TaskList'
@@ -9,6 +9,8 @@ import FetchDemoView from './components/FetchDemoView'
 import { ThemeProvider } from './contexts/ThemeContext'
 import type { Task } from './components/TaskList'
 
+const STORAGE_KEY = 'task-app-tasks'
+
 const INITIAL_TASKS: Task[] = [
   { id: 1, title: 'First Task', description: 'Description one', priority: 'High', completed: false },
   { id: 2, title: 'Second Task', description: 'Description two', priority: 'Medium', completed: false },
@@ -17,8 +19,25 @@ const INITIAL_TASKS: Task[] = [
   { id: 5, title: 'Fifth Task', description: 'Description five', priority: 'High', completed: false },
 ]
 
+function loadInitialTasks(): Task[] {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (raw == null) {
+      return INITIAL_TASKS
+    }
+    const parsed: unknown = JSON.parse(raw)
+    return Array.isArray(parsed) ? (parsed as Task[]) : INITIAL_TASKS
+  } catch {
+    return INITIAL_TASKS
+  }
+}
+
 function AppContent() {
-  const [tasks, setTasks] = useState<Task[]>(INITIAL_TASKS)
+  const [tasks, setTasks] = useState<Task[]>(loadInitialTasks)
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks))
+  }, [tasks])
 
   const handleDelete = (id: string | number) => {
     if (window.confirm('Are you sure?')) {

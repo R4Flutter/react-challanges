@@ -205,5 +205,28 @@
       "maintainability": 90,
       "overall": "The code is well-structured and follows good practices, but it could benefit from some refactoring to make it more maintainable and easier to understand."
     }
+  },
+  {
+    "challengeId": "10-useeffect-local-storage",
+    "challengeName": "useEffect - Local Storage Persistence",
+    "aiReview": {
+      "challengeId": "10-useeffect-local-storage",
+      "timestamp": "2026-08-15T07:11:31.180Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear separation of concerns between the AppContent component and the useEffect hook.",
+        "The use of a constant for the storage key is a good practice to avoid magic strings.",
+        "The code is well-documented with clear and concise comments."
+      ],
+      "improvements": [
+        "The useEffect hook that saves tasks to local storage could be improved by adding a check to ensure that the tasks array is not empty before saving.",
+        "The loadInitialTasks function could be simplified by using the optional chaining operator (?.) to avoid the need for a try-catch block.",
+        "The AppContent component could benefit from a more robust way of handling errors, such as displaying an error message to the user when something goes wrong."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, but could benefit from a few improvements to make it more robust and error-free. With some minor tweaks, it would be a solid example of how to use useEffect to persist data to local storage."
+    }
   }
 ]
