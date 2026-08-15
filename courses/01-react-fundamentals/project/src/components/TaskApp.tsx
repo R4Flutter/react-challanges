@@ -31,12 +31,21 @@ export default function TaskApp({
 }: TaskAppProps) {
   const [filter, setFilter] = useState<FilterValue>('all')
   const [sortOrder, setSortOrder] = useState<SortValue>('Recently Added')
+  const [editingId, setEditingId] = useState<string | number | null>(null)
 
   const handleToggle = (id: string | number) => {
     if (setTasks) {
       setTasks((prev) => prev.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t)))
     } else if (dispatch) {
       dispatch({ type: 'TOGGLE_TASK', payload: id })
+    }
+  }
+
+  const handleUpdateTask = (id: string | number, updates: Partial<Task>) => {
+    if (setTasks) {
+      setTasks((prev) => prev.map((t) => (t.id === id ? { ...t, ...updates } : t)))
+    } else if (dispatch) {
+      dispatch({ type: 'UPDATE_TASK', payload: { id, ...updates } })
     }
   }
 
@@ -98,6 +107,9 @@ export default function TaskApp({
         countText={countText}
         onToggle={handleToggle}
         onDelete={onDelete}
+        onUpdateTask={handleUpdateTask}
+        editingId={editingId}
+        onStartEdit={setEditingId}
       />
     </div>
   )

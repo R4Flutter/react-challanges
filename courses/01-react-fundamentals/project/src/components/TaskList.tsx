@@ -10,11 +10,20 @@ export interface Task {
   dueDate?: string | number
 }
 
+export interface TaskUpdates {
+  title: string
+  description: string
+  priority: string
+}
+
 interface TaskListProps {
   tasks?: Task[]
   countText?: string
   onToggle?: (id: string | number) => void
   onDelete?: (id: string | number) => void
+  onUpdateTask?: (id: string | number, updates: TaskUpdates) => void
+  editingId?: string | number | null
+  onStartEdit?: (id: string | number | null) => void
   linkToTaskDetail?: boolean
 }
 
@@ -24,7 +33,15 @@ const DEFAULT_TASKS: Task[] = [
   { id: 3, title: 'Task Three', description: 'Third task', priority: 'Low', completed: false },
 ]
 
-export default function TaskList({ tasks, countText, onToggle, onDelete }: TaskListProps) {
+export default function TaskList({
+  tasks,
+  countText,
+  onToggle,
+  onDelete,
+  onUpdateTask,
+  editingId,
+  onStartEdit,
+}: TaskListProps) {
   const items = tasks ?? DEFAULT_TASKS
   return (
     <section id="task-list">
@@ -39,6 +56,9 @@ export default function TaskList({ tasks, countText, onToggle, onDelete }: TaskL
           completed={task.completed}
           onToggle={onToggle}
           onDelete={onDelete}
+          onUpdateTask={onUpdateTask}
+          editingId={editingId}
+          onStartEdit={onStartEdit}
         />
       ))}
     </section>
