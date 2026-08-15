@@ -58,6 +58,7 @@ export default function TaskList({
           completed={task.completed}
           category={task.category}
           tags={task.tags}
+          dueDate={task.dueDate}
           onToggle={onToggle}
           onDelete={onDelete}
           onUpdateTask={onUpdateTask}

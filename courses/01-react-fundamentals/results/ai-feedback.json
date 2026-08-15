@@ -274,5 +274,28 @@
       "maintainability": 90,
       "overall": "The code is well-structured, maintainable, and scalable, with a good balance of functionality and accessibility. However, there are some areas for improvement, such as making the code more modular and adding ARIA attributes to improve accessibility."
     }
+  },
+  {
+    "challengeId": "13-due-dates-and-sorting",
+    "challengeName": "Due Dates and Sorting",
+    "aiReview": {
+      "challengeId": "13-due-dates-and-sorting",
+      "timestamp": "2026-08-15T07:16:23.273Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components makes the code more maintainable and efficient.",
+        "The code includes clear and concise comments, making it easier to understand the functionality."
+      ],
+      "improvements": [
+        "Some of the functions, such as `getDueDateLabel` and `formatDueDate`, are quite long and complex. Consider breaking them down into smaller, more manageable functions.",
+        "The `TaskCard` component has a lot of props, which can make it difficult to understand and maintain. Consider using a props validator or breaking down the component into smaller, more focused components.",
+        "The `TaskApp` component has a lot of state and props, which can make it difficult to understand and maintain. Consider using a more modular approach, such as using a separate component for the filter bar and search functionality."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, but could benefit from some refactoring to improve readability and modularity. With some additional attention to these areas, the code could be even more efficient and effective."
+    }
   }
 ]

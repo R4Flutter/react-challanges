@@ -119,6 +119,11 @@ export default function TaskApp({
         if (sortOrder === 'Priority: Low to High') {
           return (PRIORITY_ORDER[b.priority] ?? 1) - (PRIORITY_ORDER[a.priority] ?? 1)
         }
+        if (sortOrder === 'Due Date (Soonest First)') {
+          const aTime = a.dueDate === undefined ? Number.POSITIVE_INFINITY : new Date(a.dueDate).getTime()
+          const bTime = b.dueDate === undefined ? Number.POSITIVE_INFINITY : new Date(b.dueDate).getTime()
+          return aTime - bTime
+        }
         return 0
       })
     : visible

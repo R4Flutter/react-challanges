@@ -4,6 +4,7 @@ export type SortValue =
   | 'Priority: High to Low'
   | 'Priority: Low to High'
   | 'Alphabetical'
+  | 'Due Date (Soonest First)'
 
 interface FilterBarProps {
   filter?: FilterValue
@@ -92,6 +93,7 @@ export default function FilterBar({
           <option value="Priority: High to Low">Priority: High to Low</option>
           <option value="Priority: Low to High">Priority: Low to High</option>
           <option value="Alphabetical">Alphabetical</option>
+          <option value="Due Date (Soonest First)">Due Date (Soonest First)</option>
         </select>
       )}
     </div>
