@@ -6,6 +6,8 @@ import TaskList from './TaskList'
 import TaskForm from './TaskForm'
 import FilterBar from './FilterBar'
 import StatsPanel from './StatsPanel'
+import Button from './Button'
+import { useTheme } from '../contexts/ThemeContext'
 import type { FilterValue, SortValue } from './FilterBar'
 
 interface TaskAppProps {
@@ -42,6 +44,7 @@ export default function TaskApp({
   const [searchQuery, setSearchQuery] = useState('')
   const [debouncedQuery, setDebouncedQuery] = useState('')
   const [categoryFilter, setCategoryFilter] = useState('all')
+  const { theme, toggleTheme } = useTheme()
 
   const uniqueCategories = [
     ...new Set(
@@ -168,6 +171,15 @@ export default function TaskApp({
 
   return (
     <div>
+      <Button
+        id="theme-toggle"
+        type="button"
+        variant="secondary"
+        onClick={toggleTheme}
+        data-active={undefined}
+      >
+        {theme === 'light' ? 'Switch to Dark' : 'Switch to Light'}
+      </Button>
       {showForm && <TaskForm onAddTask={handleAddTask} categories={showCategories ? formCategories : undefined} />}
       {showStatsPanel && (
         <StatsPanel

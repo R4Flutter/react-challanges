@@ -6,7 +6,7 @@ import TaskList from './components/TaskList'
 import TaskApp from './components/TaskApp'
 import TaskDetailPage from './components/TaskDetailPage'
 import FetchDemoView from './components/FetchDemoView'
-import { ThemeProvider } from './contexts/ThemeContext'
+import { ThemeProvider, useTheme } from './contexts/ThemeContext'
 import type { Task } from './components/TaskList'
 import { DEFAULT_CATEGORY } from './components/TaskList'
 
@@ -46,6 +46,7 @@ function loadInitialTasks(): Task[] {
 
 function AppContent() {
   const [tasks, setTasks] = useState<Task[]>(loadInitialTasks)
+  const { theme } = useTheme()
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks))
@@ -59,7 +60,7 @@ function AppContent() {
 
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App" data-theme={theme}>
         <main>
           <Routes>
             <Route path="/" element={<ChallengeList />} />
