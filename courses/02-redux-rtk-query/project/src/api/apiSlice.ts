@@ -45,6 +45,19 @@ export const apiSlice = createApi({
         }
       },
       invalidatesTags: [{ type: 'Post', id: 'LIST' }],
+      async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+        const patchResult = dispatch(
+          apiSlice.util.updateQueryData('getPosts', undefined, (draft) => {
+            const optimisticPost: Post = { ...arg, id: Date.now() }
+            draft.push(optimisticPost)
+          })
+        )
+        try {
+          await queryFulfilled
+        } catch {
+          patchResult.undo()
+        }
+      },
     }),
   }),
 })
