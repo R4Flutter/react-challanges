@@ -35,6 +35,17 @@ export const apiSlice = createApi({
           ? [...result.map(({ id }) => ({ type: 'Post' as const, id })), { type: 'Post' as const, id: 'LIST' }]
           : [{ type: 'Post' as const, id: 'LIST' }],
     }),
+    getPostById: builder.query<Post, number>({
+      queryFn: async (id) => {
+        try {
+          const data = await mockApi.getPostById(id)
+          return { data }
+        } catch (err: unknown) {
+          return { error: { status: 'CUSTOM_ERROR', error: String(err) } }
+        }
+      },
+      providesTags: (result, error, id) => [{ type: 'Post' as const, id }],
+    }),
     addPost: builder.mutation<Post, Omit<Post, 'id'>>({
       queryFn: async (newPost) => {
         try {
@@ -62,4 +73,4 @@ export const apiSlice = createApi({
   }),
 })
 
-export const { useGetUsersQuery, useGetPostsQuery, useAddPostMutation } = apiSlice
+export const { useGetUsersQuery, useGetPostsQuery, useGetPostByIdQuery, useAddPostMutation } = apiSlice
