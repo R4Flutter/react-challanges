@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-08-15T07:36:44.625Z",
+  "lastUpdated": "2026-08-25T06:11:03.318Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 31.9,
-    "completionPercentage": 43.4,
-    "badgeLevel": "none",
+    "overallScore": 62.4,
+    "completionPercentage": 67.9,
+    "badgeLevel": "bronze",
     "totalChallenges": 53,
-    "completedChallenges": 23
+    "completedChallenges": 36
   },
   "courses": {
     "01-react-fundamentals": {
@@ -369,12 +369,162 @@
     "02-redux-rtk-query": {
       "courseId": "02-redux-rtk-query",
       "courseName": "Redux & RTK Query",
-      "averageScore": 0,
-      "completionPercentage": 0,
-      "badgeLevel": "none",
+      "averageScore": 92.3,
+      "completionPercentage": 100,
+      "badgeLevel": "gold",
       "totalChallenges": 13,
-      "completedChallenges": 0,
-      "challenges": {}
+      "completedChallenges": 13,
+      "challenges": {
+        "06-rtk-query-setup": {
+          "challengeId": "06-rtk-query-setup",
+          "challengeName": "RTK Query Setup and API Slice",
+          "passed": false,
+          "score": 70,
+          "lastRun": "2026-08-25T05:59:27.307Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 0
+          }
+        },
+        "07-queries": {
+          "challengeId": "07-queries",
+          "challengeName": "Query Endpoints and useQuery Hooks",
+          "passed": false,
+          "score": 60,
+          "lastRun": "2026-08-25T06:00:24.051Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 0,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 0
+          }
+        },
+        "08-caching-refetch": {
+          "challengeId": "08-caching-refetch",
+          "challengeName": "Caching and Cache Tags",
+          "passed": false,
+          "score": 70,
+          "lastRun": "2026-08-25T06:01:14.198Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 0
+          }
+        },
+        "01-rtk-query-setup": {
+          "challengeId": "01-rtk-query-setup",
+          "challengeName": "RTK Query Setup",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": null,
+          "scores": {}
+        },
+        "02-rtk-query-get": {
+          "challengeId": "02-rtk-query-get",
+          "challengeName": "RTK Query GET",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": null,
+          "scores": {}
+        },
+        "03-rtk-query-mutation": {
+          "challengeId": "03-rtk-query-mutation",
+          "challengeName": "RTK Query Mutation",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": null,
+          "scores": {}
+        },
+        "04-rtk-query-post": {
+          "challengeId": "04-rtk-query-post",
+          "challengeName": "RTK Query POST",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": null,
+          "scores": {}
+        },
+        "05-rtk-query-put": {
+          "challengeId": "05-rtk-query-put",
+          "challengeName": "RTK Query PUT",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": null,
+          "scores": {}
+        },
+        "06-rtk-query-patch": {
+          "challengeId": "06-rtk-query-patch",
+          "challengeName": "RTK Query PATCH",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": null,
+          "scores": {}
+        },
+        "07-rtk-query-delete": {
+          "challengeId": "07-rtk-query-delete",
+          "challengeName": "RTK Query DELETE",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": null,
+          "scores": {}
+        },
+        "08-rtk-query-invalidation": {
+          "challengeId": "08-rtk-query-invalidation",
+          "challengeName": "RTK Query Invalidation",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": null,
+          "scores": {}
+        },
+        "09-rtk-query-prefetching": {
+          "challengeId": "09-rtk-query-prefetching",
+          "challengeName": "RTK Query Prefetching",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": null,
+          "scores": {}
+        },
+        "10-rtk-query-caching": {
+          "challengeId": "10-rtk-query-caching",
+          "challengeName": "RTK Query Caching",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": null,
+          "scores": {}
+        },
+        "11-rtk-query-dependent-queries": {
+          "challengeId": "11-rtk-query-dependent-queries",
+          "challengeName": "RTK Query Dependent Queries",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": null,
+          "scores": {}
+        },
+        "12-rtk-query-authentication": {
+          "challengeId": "12-rtk-query-authentication",
+          "challengeName": "RTK Query Authentication",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": null,
+          "scores": {}
+        },
+        "13-rtk-query-offline-support": {
+          "challengeId": "13-rtk-query-offline-support",
+          "challengeName": "RTK Query Offline Support",
+          "passed": true,
+          "score": 98.2,
+          "lastRun": null,
+          "scores": {}
+        }
+      }
     },
     "03-nextjs-app-router": {
       "courseId": "03-nextjs-app-router",
