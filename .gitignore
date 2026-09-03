@@ -49,3 +49,6 @@ Thumbs.db
 
 # Playwright
 playwright/.cache/
+
+# Tooling state
+.qwen/

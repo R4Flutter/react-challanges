@@ -1,118 +1,117 @@
 {
   "courseId": "03-nextjs-app-router",
   "courseName": "Next.js App Router",
-  "lastUpdated": "2026-08-31T05:34:39.620Z",
+  "lastUpdated": "2026-09-03T08:50:33.988Z",
   "totalChallenges": 17,
-  "completedChallenges": 0,
-  "averageScore": 12.8,
-  "completionPercentage": 0,
-  "badgeLevel": "none",
+  "completedChallenges": 17,
+  "averageScore": 89.2,
+  "completionPercentage": 100,
+  "badgeLevel": "silver",
   "challengeResults": [
     {
       "challengeId": "01-app-router-pages-layout",
       "challengeName": "App Router, Pages, and Layout",
-      "score": 17.5,
-      "passed": false
+      "score": 82.925,
+      "passed": true
     },
     {
       "challengeId": "02-server-and-client-components",
       "challengeName": "Server and Client Components",
-      "score": 17.5,
-      "passed": false
+      "score": 87.21,
+      "passed": true
     },
     {
       "challengeId": "03-data-fetching-server",
       "challengeName": "Data Fetching in Server Components",
-      "score": 10,
-      "passed": false
+      "score": 92.92,
+      "passed": true
     },
     {
       "challengeId": "04-api-route-handlers",
       "challengeName": "API Route Handlers",
-      "score": 10,
-      "passed": false
+      "score": 90.78,
+      "passed": true
     },
     {
       "challengeId": "05-loading-and-streaming",
       "challengeName": "Loading and Streaming",
-      "score": 10,
-      "passed": false
+      "score": 87.3,
+      "passed": true
     },
     {
       "challengeId": "06-dynamic-routes",
       "challengeName": "Dynamic Routes",
-      "score": 10,
-      "passed": false
+      "score": 92.3,
+      "passed": true
     },
     {
       "challengeId": "07-static-and-dynamic-rendering",
       "challengeName": "Static and Dynamic Rendering",
-      "score": 17.5,
-      "passed": false
+      "score": 86.1,
+      "passed": true
     },
     {
       "challengeId": "08-ssr-dynamic-rendering",
       "challengeName": "SSR (Server-Side Rendering)",
-      "score": 10,
-      "passed": false
+      "score": 92.3,
+      "passed": true
     },
     {
       "challengeId": "09-server-actions-and-revalidation",
       "challengeName": "Server Actions and Revalidation",
-      "score": 10,
-      "passed": false
+      "score": 91.1,
+      "passed": true
     },
     {
       "challengeId": "10-caching-and-revalidating",
       "challengeName": "Caching and Revalidating",
-      "score": 10,
-      "passed": false
+      "score": 91.1,
+      "passed": true
     },
     {
       "challengeId": "11-error-handling",
       "challengeName": "Error Handling",
-      "score": 10,
-      "passed": false
+      "score": 88.97,
+      "passed": true
     },
     {
       "challengeId": "12-metadata-and-seo",
       "challengeName": "Metadata and SEO",
-      "score": 20,
-      "passed": false
+      "score": 87.77,
+      "passed": true
     },
     {
       "challengeId": "13-images-and-fonts",
       "challengeName": "Images and Fonts",
-      "score": 17.5,
-      "passed": false
+      "score": 87.45,
+      "passed": true
     },
     {
       "challengeId": "14-search-and-pagination",
       "challengeName": "Search and Pagination",
-      "score": 10,
-      "passed": false
+      "score": 92.3,
+      "passed": true
     },
     {
       "challengeId": "15-redux-toolkit-with-nextjs",
       "challengeName": "Redux Toolkit with Next.js",
-      "score": 17.5,
-      "passed": false
+      "score": 88.6,
+      "passed": true
     },
     {
       "challengeId": "16-rtk-query-with-nextjs",
       "challengeName": "RTK Query with Next.js",
-      "score": 10,
-      "passed": false
+      "score": 89.8,
+      "passed": true
     },
     {
       "challengeId": "17-fullstack-capstone",
       "challengeName": "Fullstack Capstone",
-      "score": 10,
-      "passed": false
+      "score": 87.65,
+      "passed": true
     }
   ],
-  "skillStrengths": [],
-  "improvementAreas": [
+  "skillStrengths": [
     "App Router, Pages, and Layout",
     "Server and Client Components",
     "Data Fetching in Server Components",
@@ -130,5 +129,6 @@
     "Redux Toolkit with Next.js",
     "RTK Query with Next.js",
     "Fullstack Capstone"
-  ]
+  ],
+  "improvementAreas": []
 }
